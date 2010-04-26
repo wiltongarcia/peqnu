@@ -1,0 +1,23 @@
+<IsisScript>
+	<section>
+		<display>
+			<pft>'Content-type: text/html'/#</pft>
+		</display>
+		<parm name="cipar">
+			<pft>
+				'url.*=../../db/url.*'/
+			</pft>
+		</parm>
+		<field action="cgi" tag="2000">cod</field>
+		<do task="search">
+			<parm name="db">url</parm>
+			<parm name="expression"><pft>'COD='v2000</pft></parm>
+			<parm name="count">1</parm>
+			<loop>
+				<display>
+					<pft>v2</pft>
+				</display>
+			</loop>
+		</do>
+	</section>
+</IsisScript>

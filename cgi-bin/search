@@ -1,0 +1,27 @@
+<IsisScript>
+	<section>
+		<display>
+			<pft>'Content-type: text/html'/#</pft>
+		</display>
+		<parm name="cipar">
+			<pft>
+				'url.*=../../db/url.*'/
+			</pft>
+		</parm>
+		<field action="cgi" tag="2000">cod</field>
+		<field action="add" tag="1000">0</field>
+		<do task="search">
+			<parm name="db">url</parm>
+			<parm name="expression"><pft>'COD='v2000</pft></parm>
+			<parm name="count">1</parm>
+			<loop>
+				<field action="import" tag="1000">1000</field>
+				<field action="replace" tag="1000">1</field>
+				<field action="export" tag="1000">1000</field>
+			</loop>
+		</do>
+		<display>
+			<pft>v1000</pft>
+		</display>
+	</section>
+</IsisScript>

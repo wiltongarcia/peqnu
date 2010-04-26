@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule ^([0-9A-Z]{6})$ /index.php?cod=$1
+RewriteRule ^([a-z]{3,4})\/(.+)$ /index.php?action=$1&value=$2

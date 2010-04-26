@@ -1,0 +1,26 @@
+<IsisScript>
+	<section>
+		<display>
+			<pft>'Content-type: text/html'/#</pft>
+		</display>
+		<parm name="cipar">
+			<pft>
+				'url.*=../../db/url.*'/
+			</pft>
+		</parm>
+		<do task="update">
+			<parm name="db">url</parm>
+			<parm name="mfn">New</parm>
+			<parm name="count">1</parm>
+            <parm name="fst"><pft>cat('url.fst')</pft></parm>
+            <parm name="lockid"><pft>getenv('REMOTE_ADDR')</pft></parm>
+            <field action="define" tag="9101">Isis_Lock</field>
+            <field action="define" tag="9102">Isis_Status</field>
+			<update>
+					<field action="cgi" tag="1">v1</field>
+					<field action="cgi" tag="2">v2</field>
+				<write>Unlock</write>
+			</update>
+		</do>
+	</section>
+</IsisScript>
